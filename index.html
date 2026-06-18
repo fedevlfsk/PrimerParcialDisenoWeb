@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista de canciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+
+      <div class="logo">
+        <span class="logo-icon">♫</span>
+        <span>Agregar Canciones</span>
+      </div>
+
+      <div>
+        <p class="form-label">Nueva canción</p>
+
+        <input type="hidden" id="input-id" value="" />
+
+        <form id="form-cancion">
+
+          <div class="field">
+            <label for="input-title">Título</label>
+            <input type="text" id="input-title" placeholder="Nombre de la canción" required />
+          </div>
+
+          <div class="field">
+            <label for="input-album">Álbum ID</label>
+            <input type="number" id="input-album" placeholder="1 – 100" min="1" max="100" required />
+          </div>
+
+          <div class="cover-preview">
+            <img id="previewThumbnail" src="" alt="" />
+            <span class="cover-placeholder">Sin portada</span>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-add" id="btn-guardar">Agregar canción</button>
+            <button type="button" class="btn-cancel" id="btn-cancelar" style="display:none;">Cancelar</button>
+          </div>
+
+        </form>
+
+        <p id="mensaje-estado"></p>
+      </div>
+
+    </aside>
+
+    <main class="main">
+
+      <header class="main-header">
+        <div>
+          <h1>Lista de canciones:</h1>
+        </div>
+        <div class="track-count" id="track-count">— tracks</div>
+      </header>
+
+      <div class="tracklist-header">
+        <span class="col-num">#</span>
+        <span class="col-cover"></span>
+        <span class="col-title">Título</span>
+        <span class="col-album">Álbum</span>
+        <span class="col-actions"></span>
+      </div>
+
+      <ul class="tracklist" id="tbody-canciones"></ul>
+
+    </main>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
